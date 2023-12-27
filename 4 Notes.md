@@ -140,7 +140,6 @@ are key-value pairs that can affect the behavior of running processes on a compu
   - For instance, to use Windows-1252 encoding, start your file with `# -*- coding: cp1252 -*-`.
 
 ---
-<br>
 
 ### Physical and Logical Lines in Python
 
@@ -227,6 +226,41 @@ are key-value pairs that can affect the behavior of running processes on a compu
   - A single underscore (`_`) is used in some specific cases, like in pattern matching, or in interactive mode to hold the last result.
   - Names with double underscores at both ends (`__name__`) (known as “dunder” names) are used by Python itself and have special meaning.
   - Names starting with double underscores (`__name`) are private within a class, meaning they're meant to be used only inside the class.
+
+---
+
+### Best practices for naming identifiers (such as variables, functions, classes, etc.)
+
+These practices about making the code more readable, maintainable, and understandable. 
+
+1. **PEP 8 Guidelines**: 
+   - **Variables and Functions**: Use lowercase words or words separated by underscores (e.g., `my_variable`).
+   - **Classes and Exceptions**: Use the CapWords convention (e.g., `MyClass`).
+   - **Constants**: Use all uppercase letters with underscores separating words (e.g., `MY_CONSTANT`).
+
+2. **Descriptive Names**: Choose names that are descriptive and give a clear idea about the purpose of the variable, function, or class. For example, `calculate_total_price` is better than `ctp` or `calc`.
+
+3. **Avoid Ambiguity**: Avoid names that are too generic or vague. For example, `data` or `info` can be too ambiguous. Instead, use names like `customer_data` or `game_info`. Avoid using names that are too similar. For example, `user_list` and `users_list` might be confusing.
+
+4. **Use Meaningful Names for Loops and Iterators**: For instance, instead of using `i` and `j` for loop variables, use names like `for employee in employees`.
+
+5. **Single-letter Names**: Generally, avoid single-letter names except in certain contexts like loop iterators or lambda functions where their scope is very small and their purpose is obvious.
+
+6. **Naming Private and Protected Members**: In Python, prefix a single underscore for protected members (e.g., `_protected_var`) and double underscore for private members of a class (e.g., `__private_var`).
+
+7. **Use Verb Phrases for Functions**: Function names should typically be verb phrases (e.g., `calculate_total`, `read_file`) as they often represent actions. For functions handling specific events, include the event in the name (e.g., `on_click`, `after_save`).
+
+8. **Use Noun Phrases for Classes**: Class names should typically be noun phrases (e.g., `Car`, `UserAccount`) as they often represent objects or concepts.
+
+9. **Use Conventions for Specific Types of Variables**:
+    - **Boolean Variables**: Use is, has, or can in names (e.g., `is_visible`, `has_completed`).
+    - **Iterables**: Use plural names for lists or collections (e.g., `items`, `users`).
+
+10. **Avoid Using Numbers in Names**: Names like `data1`, `data2`, etc., are not descriptive and should be avoided. Instead, use names that describe what the data represents.
+
+11. **Naming in Test Cases**: In test functions, names should be very descriptive, explaining what condition or scenario is being tested.
+
+12. **Prefix Unused Variables**: If a variable is intentionally not used, prefix it with an underscore (e.g., `_unused_var`).
 
 ---
 
