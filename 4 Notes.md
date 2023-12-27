@@ -1,4 +1,148 @@
-#### What are Physical and Logical Lines?
+# Python Notes
+
+---
+
+1. **Checking Python Version**
+    ```
+    python3 --version
+    ```
+
+2. **Checking PIP Version**
+    ```
+    python3 -m pip --version
+    ```
+
+3. **Listing Installed Packages:**
+    ```
+    python3 -m pip list
+    ```
+
+4. **Updating pip, setuptools, and wheel**
+    ```
+    python3 -m pip install --upgrade pip setuptools wheel
+    ```
+
+---
+
+5. **Creating New Virtual Environment**
+    ```
+    python3 -m venv <Directory-Name>
+    ```
+
+6. **Activating Virtual Environment**
+   - On Windows:
+     ```
+     <Directory-Name>\Scripts\activate
+     ```
+   - On Unix/macOS:
+     ```
+     source <Directory-Name>/bin/activate
+     ```
+
+---
+
+7. **Installing Packages**
+   - To install a package (e.g., SomeProject):
+     ```
+     python3 -m pip install SomeProject
+     ```
+   - To install a specific version of a package:
+     ```
+     python3 -m pip install SomeProject==1.4
+     ```
+
+8. **Upgrading Packages**
+    ```
+    python3 -m pip install --upgrade SomeProject
+    ```
+
+9. **Uninstalling Packages**
+    ```
+    python -m pip uninstall sampleproject
+    ```
+
+10. **Install packages from a Requirements File**
+    ```
+    python3 -m pip install -r requirements.txt
+    ```
+  - Format of 'requirements.txt' File - 
+    ```
+    pytest  # Installs Latest version
+    pandas==1.2.3  # Installs Specific version
+    ```
+
+---
+
+11. **Basic Python Command Structure**
+    ```
+    python [options] [-c command | -m module-name | script - ] [args]
+    ```
+    - Basic Usage: `python script.py`
+      This is the most common way to run a Python script. Replace `script.py` with the name of your Python file.
+
+    - Executing Commands Directly: `python -c "command"`
+      Use this to execute Python code directly in the command line. For example, `python -c "print('Hello, World!')"` will print "Hello, World!".
+
+    - Interactive Mode: `python -i`
+      This starts Python in interactive mode. It's a way to write and test Python code in a command-by-command manner similar to a live Python shell.
+
+    - Running Modules as Scripts: `python -m module_name`
+      This allows you to run a Python module as a script. For example, `python -m http.server` starts a simple HTTP server.
+
+    - Help: `python -h` or `python --help`
+      Displays help information about Python command line options.
+
+---
+
+12. **Environment variables**
+are key-value pairs that can affect the behavior of running processes on a computer, including Python processes. They are used to configure and pass information to Python and other applications. Use environment variables only when necessary.
+
+  - **How to Set Environment Variables**
+    - **On Windows**: set environment variables through the System Properties (Environment Variables Dialog) - save in PATH=C:\Program Files\Python 3.9, or by using the `set` command in the command prompt (e.g., `set PYTHONPATH=C:\MyPythonLibs`).
+    - **On Unix/Linux/macOS**: You typically set them in your shell profile file (like `.bash_profile` or `.bashrc`) using the `export` command (e.g., `export PYTHONPATH=/my/python/libs`).
+
+  - **Important Python Environment Variables**
+    - **`PYTHONPATH`**: This is a list of directories where Python looks for modules to import (sys.path directory list). If you have Python code in a folder that isn't normally searched by Python, you can add that folder to `PYTHONPATH`, so Python knows to look there too.
+    - **`PYTHONHOME`**: This variable sets the location of the standard Python libraries. If you have Python installed in a non-standard location, or if you're using a different version of Python, you can use `PYTHONHOME` to point to the correct location.
+    - **`PYTHONUSERBASE`**:
+    Specifies the base directory for user-based installations. When set, Python installs packages in this directory.
+
+---
+
+**Making Python Scripts Executable on Linux Systems:**
+
+  - To make a Python script executable, you use a command called `chmod +x`.
+
+  - Adding a Shebang Line: `#!/usr/bin/env python3`
+    A "Shebang" line is the first line in a script that tells the system where the Python interpreter is located.
+    `/usr/bin/env python3` is a way of telling the system, "Find the Python 3 interpreter wherever it is installed.
+
+---
+
+**Python Library Location in Windows:**
+
+  - Python usually stores its library in the installation directory. For example, if Python is installed in `C:\Python\`, you'll find:
+
+    - The default library in `C:\Python\Lib\`
+    - Third-party modules in `C:\Python\Lib\site-packages\`
+
+---
+
+**Exiting the Python Interpreter**
+  - To close the Python program, press `Ctrl+D` (on Linux) or `Ctrl+Z` (on Windows). This will stop the program.
+  - If that doesn't work, you can also type `quit()` and press Enter to exit.
+
+---
+
+**Python Files - Source Code Encoding**
+  - Normally, Python files are written in UTF-8 format. This lets you use many different characters from various languages in your code. To see these characters correctly (including Emojis), your text editor must support UTF-8 and use a suitable font.
+  - If you need a different format than UTF-8, you can specify this with a special line at the start of your file: `# -*- coding: encoding -*-`, replacing `encoding` with your chosen format. If your file begins with a shebang line (like `#!/usr/bin/env python3`), put the encoding line right after it.
+  - For instance, to use Windows-1252 encoding, start your file with `# -*- coding: cp1252 -*-`.
+
+---
+<br>
+
+### Physical and Logical Lines in Python
 
 - **Physical Line**: This is what you see in your code as a single line. It ends when you press "Enter" to start a new line.
 - **Logical Line**: This is what Python sees as a single statement or instruction. Sometimes, a logical line can be spread over several physical lines for better readability.
@@ -83,6 +227,8 @@
   - A single underscore (`_`) is used in some specific cases, like in pattern matching, or in interactive mode to hold the last result.
   - Names with double underscores at both ends (`__name__`) (known as “dunder” names) are used by Python itself and have special meaning.
   - Names starting with double underscores (`__name`) are private within a class, meaning they're meant to be used only inside the class.
+
+---
 
 ### Keywords in Python
 
@@ -397,3 +543,7 @@ These are not used in Python and cause errors outside strings or comments.
 - `` ` ``: Backtick
 
 **Ellipsis Literal (`...`)**: Special use in Python, like slicing.
+
+<br>
+
+---
